@@ -1,5 +1,9 @@
-# A IRC server meant for chatting
+# InspIRCd Server
 
-###### (Will work with the lounge addon)
+This add‑on runs InspIRCd in a Docker container.
 
-## An IRC server for chatting, more features coming soon.
+## Configuration
+
+No additional options.
+
+It exposes ports 6667 (unencrypted) and 6697 (TLS).
