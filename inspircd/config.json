@@ -1,0 +1,22 @@
+{
+    "name": "InspIRCd Server",
+    "version": "1.0.0",
+    "slug": "inspircd",
+    "description": "InspIRCd IRC server using the official Docker image",
+    "arch": [
+      "amd64",
+      "armv7",
+      "aarch64"
+    ],
+    "startup": "services",
+    "boot": "auto",
+    "ports": {
+      "6667/tcp": 6667,
+      "6697/tcp": 6697
+    },
+    "map": [
+      "inspircd-data:/inspircd/conf:rw"
+    ],
+    "image": "inspircd/inspircd-docker"
+  }
+  
