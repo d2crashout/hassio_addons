@@ -1,0 +1,6 @@
+{
+    "name": "Home Assistant Add-ons by d2crashout",
+    "udev": true,
+    "url": "https://github.com/d2crashout/hassio_addons",
+    "maintainer": "d2crashout"
+  }
