@@ -1,4 +1,4 @@
-name: Publish InspIRCd Docker Image
+name: Publish Docker Images
 
 on:
   push:
@@ -12,7 +12,7 @@ permissions:
   packages: write           # to push to GHCR
 
 jobs:
-  build-and-push:
+  publish-inspircd-image:
     runs-on: ubuntu-latest
 
     steps:
