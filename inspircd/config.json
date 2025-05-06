@@ -1,6 +1,6 @@
 {
   "name": "InspIRCd Server",
-  "version": "1.0.0",
+  "version": "latest",
   "slug": "inspircd",
   "description": "InspIRCd IRC server using the official Docker image with default config",
   "arch": ["amd64", "armv7", "aarch64"],
@@ -17,5 +17,5 @@
       "read_only": false
     }
   ],
-  "image": "ghcr.io/d2crashout/hassio-inspircd:latest"
+  "image": "ghcr.io/d2crashout/hassio-inspircd"
 }
