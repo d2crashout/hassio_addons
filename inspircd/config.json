@@ -8,8 +8,8 @@
   "logo": "logo.png",
   "icon": "icon.png",
   "url": "https://github.com/d2crashout/hassio_addons/tree/main/inspircd",
-  "boot": "auto",
-"options": {
+  "boot": "auto", 
+  "options": {
   "server_name": "irc.example.com",
   "server_description": "InspIRCd Server",
   "network_name": "HomeIRCd",
@@ -21,8 +21,8 @@
   "user_nick": "homebot",
   "user_name": "homebot",
   "user_realname": "Home Assistant Bot"
-},
-"schema": {
+  },
+  "schema": {
   "server_name": "str",
   "server_description": "str",
   "network_name": "str",
