@@ -14,66 +14,27 @@ if [ -z "$(ls -A "$CONFIG_DIR")" ]; then
   chown -R inspircd:inspircd "$CONFIG_DIR"
 fi
 
-# 3) Overwrite with a minimal, valid config using your env vars
+# 3) Overwrite with a minimal valid inspircd.conf
 cat > "$CONFIG_DIR/inspircd.conf" <<EOF
 <inspircd>
-
-  <!-- Server identity -->
-  <server
-    name="${SERVER_NAME}"
-    description="${SERVER_DESCRIPTION}"
-    network="${NETWORK_NAME}"
-    id="1"
-    hidden="no"
-  />
-
-  <!-- Admin contact -->
-  <admin
-    name="${ADMIN_NAME}"
-    email="${ADMIN_EMAIL}"
-    location="${ADMIN_LOCATION}"
-  />
-
-  <!-- Bind blocks define where clients connect -->
-  <bind
-    address="0.0.0.0"
-    port="${LISTEN_PORT}"
-    type="clients"
-  />
-  <bind
-    address="0.0.0.0"
-    port="6697"
-    type="clients"
-    options="ssl"
-    sslcertfile="/inspircd/conf/server.pem"
-    sslkeyfile="/inspircd/conf/server.key"
-  />
-
-  <!-- Connection class -->
-  <class name="default">
-    <pingfreq>120</pingfreq>
-    <sendq>100000</sendq>
-    <recvq>8000</recvq>
-    <timeout>45</timeout>
-  </class>
-  <connect class="default" />
-
-  <!-- Operator account -->
-  <oper
-    name="${ADMIN_NAME}"
-    password="${ADMIN_PASSWORD}"
-    class="default"
-    flags="oO"
-  />
-
-  <!-- MOTD -->
-  <motd>
+<server name="${SERVER_NAME}" description="${SERVER_DESCRIPTION}" network="${NETWORK_NAME}" id="1" hidden="no" />
+<admin name="${ADMIN_NAME}" email="${ADMIN_EMAIL}" location="${ADMIN_LOCATION}" />
+<listen address="0.0.0.0" port="${LISTEN_PORT}" options="ipv4" />
+<listen address="0.0.0.0" port="6697" options="ssl" sslcertfile="${CONFIG_DIR}/server.pem" sslkeyfile="${CONFIG_DIR}/server.key" />
+<class name="default">
+  <pingfreq>120</pingfreq>
+  <sendq>100000</sendq>
+  <recvq>8000</recvq>
+  <timeout>45</timeout>
+</class>
+<connect class="default" />
+<oper name="${ADMIN_NAME}" password="${ADMIN_PASSWORD}" class="default" flags="oO" />
+<motd>
 :Welcome to ${NETWORK_NAME}!
 :Server: ${SERVER_NAME}
-:Managed by Home Assistant
-  </motd>
-
+</motd>
 </inspircd>
 EOF
 
+# 4) Run upstream entrypoint
 exec /entrypoint.sh --runasroot "$@"
