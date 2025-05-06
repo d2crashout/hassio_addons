@@ -1,6 +1,6 @@
 {
   "name": "InspIRCd Server",
-  "version": "dev-236fff0",
+  "version": "dev-d7feeae",
   "slug": "inspircd",
   "description": "InspIRCd IRC server using the official Docker image with default config",
   "arch": [
