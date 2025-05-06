@@ -1,10 +1,7 @@
-# 1. Base from the official InspIRCd image
 FROM inspircd/inspircd-docker:latest
 
-# 2. Copy in your default config and startup script
-COPY defaults/ /defaults/
-COPY run.sh /run.sh
-RUN chmod +x /run.sh
+# Copy the run.sh and defaults, setting the exec bit in one go:
+COPY --chmod=0755 defaults/ /defaults/
+COPY --chmod=0755 run.sh    /run.sh
 
-# 3. Use your run.sh as the container entrypoint
-ENTRYPOINT [ "/run.sh" ]
+ENTRYPOINT ["/run.sh"]
