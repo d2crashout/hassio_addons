@@ -83,4 +83,4 @@ EOF
 # ————————————————————————————————
 # Delegate to the official entrypoint (preserves certs, DH params, etc.)
 # ————————————————————————————————
-exec /entrypoint.sh "$@"
+exec /entrypoint.sh --runasroot "$@"
