@@ -36,9 +36,9 @@ jobs:
         run: |
           if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
             # e.g. v1.2.3 → 1.2.3
-            echo "::set-output name=IMAGETAG::${GITHUB_REF_NAME#v}"
+            echo "IMAGETAG=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
           else
-            echo "::set-output name=IMAGETAG::latest"
+            echo "IMAGETAG=latest" >> $GITHUB_OUTPUT
           fi
 
       # 5. Build & push
