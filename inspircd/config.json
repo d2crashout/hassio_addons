@@ -46,5 +46,5 @@
       "read_only": false
     }
   ],
-  "image": "ghcr.io/d2crashout/hassio-inspircd:latest"
+  "image": "ghcr.io/d2crashout/hassio-inspircd"
 }
