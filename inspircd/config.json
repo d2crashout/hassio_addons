@@ -9,6 +9,12 @@
   "icon": "icon.png",
   "url": "https://github.com/d2crashout/hassio_addons/tree/main/inspircd",
   "boot": "auto",
+  "options": {
+    "inspircd_conf": "<conf></conf>"
+  },
+  "schema": {
+    "inspircd_conf": "str?"
+  },
   "ports": {
     "6667/tcp": 6667,
     "6697/tcp": 6697
