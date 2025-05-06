@@ -6,6 +6,7 @@
   "arch": ["amd64", "armv7", "aarch64"],
   "startup": "services",
   "logo": "logo.png",
+  "icon": "icon.png",
   "boot": "auto",
   "ports": {
     "6667/tcp": 6667,
