@@ -7,3 +7,5 @@ This add‑on runs InspIRCd in a Docker container.
 No additional options.
 
 It exposes ports 6667 (unencrypted) and 6697 (TLS).
+
+###### (This server should work with the "The Lounge" addon)
