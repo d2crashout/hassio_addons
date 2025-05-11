@@ -41,7 +41,7 @@
     "env_vars": [
       {
         "name": "ERL_FLAGS",
-        "value": "-env ERL_UNSYNC_TIME_Correction false"
+        "value": "-env ERL_UNSYNC_TIME_Correction true"
       }
     ]
   },
