@@ -58,7 +58,7 @@
       "PGID": "0",
       "PUID": "0"
     },
-    "image": "lscr.io/linuxserver/lazylibrarian:latest",
+    "image": "linuxserver/lazylibrarian:latest",
     "ingress": true,
     "ingress_entry": "lazylibrarian",
     "init": false,
