@@ -1,0 +1,24 @@
+name: LazyLibrarian
+version: "1.0.0"
+slug: lazylibrarian
+description: "LazyLibrarian eBook/audiobook automation"
+arch:
+  - amd64
+  - arm64
+startup: services
+boot: auto
+ports:
+  5299/tcp: 5299
+webui: "http://[HOST]:[PORT:5299]"
+map:
+  - config:rw
+  - share:rw
+image: "lscr.io/linuxserver/lazylibrarian:latest"
+options:
+  PUID: "1000"
+  PGID: "1000"
+  TZ: "Etc/UTC"
+schema:
+  PUID: str
+  PGID: str
+  TZ: str

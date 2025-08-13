@@ -1,7 +1,0 @@
-name: lazylibrarian
-version: 1.0.0
-description: A Home Assistant addon for LazyLibrarian.
-dependencies:
-  - docker
-  - nginx
-url: https://github.com/d2crashout/hassio_addons
